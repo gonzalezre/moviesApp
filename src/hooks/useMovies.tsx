@@ -1,7 +1,7 @@
 import { View, Text } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import movieDB from '../api/MovieDB';
-import { Movie, MovieDBMoviesResponse } from '../interfaces/movieInterface';
+import { Movie, MovieDBResponse } from '../interfaces/movieInterface';
 
 //for preventing using 4 different states
 interface MoviesState {
@@ -30,10 +30,10 @@ export const useMovies = () => {
         //const respNowPlaying = await movieDB.get<MovieDBMoviesResponse>('/now_playing');
         //const respPopularMovies = await movieDB.get<MovieDBMoviesResponse>('/popular');
 
-        const nowPlayingPromise = await movieDB.get<MovieDBMoviesResponse>('/now_playing');
-        const popularPromise = await movieDB.get<MovieDBMoviesResponse>('/popular');
-        const topRatedPromise = await movieDB.get<MovieDBMoviesResponse>('/top_rated');
-        const upcomingPromise = await movieDB.get<MovieDBMoviesResponse>('/upcoming');
+        const nowPlayingPromise = await movieDB.get<MovieDBResponse>('/now_playing');
+        const popularPromise = await movieDB.get<MovieDBResponse>('/popular');
+        const topRatedPromise = await movieDB.get<MovieDBResponse>('/top_rated');
+        const upcomingPromise = await movieDB.get<MovieDBResponse>('/upcoming');
 
         const response = await Promise.all([
             nowPlayingPromise,

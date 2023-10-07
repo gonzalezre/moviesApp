@@ -1,7 +1,6 @@
 import { View, Text, Image, StyleSheet } from 'react-native'
 import React from 'react'
 import { Cast } from '../interfaces/movieInterface'
-import { act } from 'react-test-renderer';
 
 interface Props {
     actor: Cast;
